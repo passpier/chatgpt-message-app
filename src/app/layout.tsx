@@ -1,4 +1,5 @@
 import "./globals.css";
+import SideBar from "@/components/SideBar";
 
 export const metadata = {
   title: "Create Next App",
@@ -15,7 +16,9 @@ export default function RootLayout({
       <head />
       <body>
         <div className="flex">
-          {/* Sidebar */}
+          <div className="bg-[#202123] max-w-xs h-screen overflow-y-auto md:min-w-[20rem]">
+            <SideBar />
+          </div>
 
           {/* ClientProvider - Notification */}
 
