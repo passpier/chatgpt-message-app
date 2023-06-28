@@ -10,7 +10,7 @@ const SideBar: React.FC<SideBarProps> = ({ data }) => {
     <div className="p-2 flex flex-col h-screen ">
       <div className="flex-1">
         <div>
-          <NewChat data="" />
+          <NewChat />
           <div>{/*  Model Selection */}</div>
           {/*  Map through the CharRows */}
         </div>
