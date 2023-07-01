@@ -4,6 +4,7 @@ import SessionProvider from "@/components/SessionProvider";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import Login from "@/components/Login";
+import ClientProvider from "@/components/ClientProvider";
 
 export const metadata = {
   title: "Create Next App",
@@ -31,7 +32,7 @@ export default async function RootLayout({
               </div>
 
               {/* ClientProvider - Notification */}
-
+              <ClientProvider />
               <div className="bg-[#343541] flex-1">{children}</div>
             </div>
           )}

@@ -5,7 +5,7 @@ interface ChatProps {
 }
 
 const Chat: React.FC<ChatProps> = ({ chatId }) => {
-  return <div></div>;
+  return <div className="flex-1 "></div>;
 };
 
 export default Chat;
