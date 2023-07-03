@@ -1,11 +1,14 @@
+"use client";
+
 import React from "react";
+import { Toaster } from "react-hot-toast";
 
-interface ClientProviderProps {
-  data?: any;
-}
-
-const ClientProvider: React.FC<ClientProviderProps> = ({ data }) => {
-  return <div></div>;
+const ClientProvider = () => {
+  return (
+    <>
+      <Toaster position="top-right" />
+    </>
+  );
 };
 
 export default ClientProvider;
