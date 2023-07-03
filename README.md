@@ -10,3 +10,13 @@ Feature:
 * Build a responsive site with Tailwind CSS
 * Cloud Firestore Database
 * Combine Server and Client Component
+
+## OpenAI Manual
+
+1. Install OpenAI Node.js Library
+```bash
+yarn add openai
+```
+2. Get openai key from url: [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)
+3. Access to the openai api with openai key
+<img src="doc/openai_api_keys_screen.png" style="max-width: 100%;">
