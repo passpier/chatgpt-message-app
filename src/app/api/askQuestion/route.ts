@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { query } from "@firebase/firestore";
+import query from "@/libs/queryApi";
+import admin from "firebase-admin";
+import { adminDb } from "../../../../firebaseAdmin";
 
 export async function POST(request: NextRequest) {
   try {
@@ -23,9 +25,23 @@ export async function POST(request: NextRequest) {
     const response = await query(prompt, chatId, model);
     const message: Message = {
       text: response || "ChatGPT was unable to find an answer for that!",
+      createdAt: admin.firestore.Timestamp.now(),
+      user: {
+        _id: "ChatGPT",
+        name: "ChatGPT",
+        avatar: "https://links.papareact.com/89k",
+      },
     };
 
-    return NextResponse.json({ name: "John Doe" });
+    await adminDb
+      .collection("users")
+      .doc(session?.user?.email)
+      .collection("chats")
+      .doc(chatId)
+      .collection("messages")
+      .add(message);
+
+    return NextResponse.json({ answer: message.text });
   } catch (e) {
     console.log(e);
     return NextResponse.json({}, { status: 500 });
