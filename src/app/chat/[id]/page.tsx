@@ -5,7 +5,7 @@ import ChatInput from "@/components/ChatInput";
 const ChatPage = ({ params }: { params: { id: string } }) => {
   const { id } = params;
   return (
-    <div>
+    <div className="flex flex-col h-screen overflow-hidden">
       <Chat chatId={id} />
       <ChatInput chatId={id} />
     </div>

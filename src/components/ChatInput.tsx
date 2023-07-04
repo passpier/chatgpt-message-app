@@ -42,7 +42,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ chatId }) => {
         session?.user?.email!,
         "chats",
         chatId,
-        "message"
+        "messages"
       ),
       message
     );
