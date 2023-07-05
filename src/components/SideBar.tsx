@@ -7,6 +7,7 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import { collection, orderBy, query } from "@firebase/firestore";
 import { db } from "../../firebase";
 import ChatRow from "@/components/ChatRow";
+import ModelSelection from "@/components/ModelSelection";
 
 const SideBar = () => {
   const { data: session } = useSession();
@@ -24,7 +25,9 @@ const SideBar = () => {
       <div className="flex-1">
         <div>
           <NewChat />
-          <div>{/*  Model Selection */}</div>
+          <div className="hidden sm:inline">
+            <ModelSelection />
+          </div>
           {/*  Map through the CharRows */}
           {chats?.docs.map((chat) => (
             <ChatRow key={chat.id} id={chat.id} />
