@@ -22,10 +22,3 @@ yarn add openai
 2. Get openai key from url: [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)
 3. Access to the openai api with openai key
 <img src="doc/openai_api_keys_screen.png" style="max-width: 100%;">
-
-### Error Code
-
-*Status 429* : Too many requests 
-
-<img src="doc/status429_snapshot.png" style="max-width: 100%;">
-
